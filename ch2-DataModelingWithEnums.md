@@ -4,7 +4,7 @@
 
 - Choose *Enum* when data has mutually exclusive properties.
 
-### Message Data: 
+### Message Data:
 
 ```swift
 enum Message {
@@ -34,7 +34,7 @@ func getMessage(message: Message) {
 - *enum* gives significant compiler advance
 - frequency using only one case collation - use *Struct*
   
-## 2.3.2
+## 2.3.2. SuperClass or Enum
 
 - Try use Enum instead of SuperClass when descendants might have exclusive properties, or properties from SuperClass are unnecessary in descendants.
   
@@ -45,3 +45,9 @@ enum Workout { // enum as SuperClass
     case pushups(Pushups) 
 }
 ```
+
+## 2.4.1. Sum Types
+
+- There are sum-types or OR-types and composition-types or AND-types.
+- change AND-type(struct) to OR-type in order to avoid cases expanding.  
+![struct->enum](images/ch2-2_5.png)
