@@ -65,3 +65,34 @@ class Run: Workout {
         super.init(id: id, start: start, end: end, distance: distance)
     }
 }
+
+//
+enum Topping {
+    case creamCheese
+    case peanutButter
+    case jam
+}
+enum BagelType {
+    case cinnamonRaisin
+    case glutenFree
+    case oatMeal
+    case blueberry
+}
+//struct Bagel {
+//    let topping: Topping
+//    let type: BagelType
+//}
+
+enum Bagel {
+    case topping(_ topping: Topping)
+    case type(_ type: BagelType)
+}
+
+enum Currency: String {
+    case usd
+    case euro
+    case bph
+}
+
+let money = Currency.usd
+print(money.rawValue)
