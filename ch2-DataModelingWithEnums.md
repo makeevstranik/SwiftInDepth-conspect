@@ -1,12 +1,12 @@
 # Chapter 2
 
-## 2.2.2 Turn Structure To Enum
+## 2.2.2. Turn Structure To Enum
 
 - Choose *Enum* when data has mutually exclusive properties.
 
 ### Message Data: 
 
-```
+```swift
 enum Message {
     case text(userId: String, contents: String, date: Date)
     case draft(userId: String, date: Date)
@@ -27,5 +27,21 @@ func getMessage(message: Message) {
         print("\(contents)")
     }
 }
+```
 
+## 2.1.3. Chose Struct or Enum
+
+- *enum* gives significant compiler advance
+- frequency using only one case collation - use *Struct*
+  
+## 2.3.2
+
+- Try use Enum instead of SuperClass when descendants might have exclusive properties, or properties from SuperClass are unnecessary in descendants.
+  
+```swift
+enum Workout { // enum as SuperClass
+    case run(Run) // class
+    case cycle(Cycle) 
+    case pushups(Pushups) 
+}
 ```
