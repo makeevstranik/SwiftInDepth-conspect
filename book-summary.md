@@ -112,3 +112,30 @@ enum ImageType: String {
 
 # Chapter 3. Pure Properties.
 
+Using lazy property:
+
+``` swift
+enum Level: Int {
+    case elementary=1
+    case preInter=2
+    case inter=3
+    case upperInter=4
+    case advanced=5
+}
+struct LearningPlan {
+    let level: Level
+    var description: String
+    
+        lazy private(set) var contents: String = { //private(set) - impossible to change out of scope
+        print("Im taking my sweet time to calculate.")
+        sleep(2)
+        switch level {
+            case .elementary: return "Watch an English documentary."
+            case .preInter: return "Translate a newspaper article "
+            case .inter: return "Transcribe one song."
+            case .upperInter: return "Listen to the radio"
+            case .advanced: return "Talk English"
+        }
+    }() // pay attention here
+}
+```
