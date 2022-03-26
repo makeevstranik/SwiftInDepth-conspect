@@ -139,3 +139,23 @@ struct LearningPlan {
     }() // pay attention here
 }
 ```
+## 3.3.2.
+Set property mutating from init()
+PROBLEM: How to call DidSet from Init()?
+``` swift
+struct Tweet {
+    let author: String
+    var message: String {
+        didSet {
+            message = message.trimmingCharacters(in: .whitespaces)
+        }
+    }
+    init(author: String, message: String) {
+        self.author = author
+        self.message  = message
+        
+        // calling didSet here
+        defer {self.message = message}
+    }
+}
+```
